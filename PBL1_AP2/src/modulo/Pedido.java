@@ -48,7 +48,7 @@ class Pedido {
 	Cliente cliente;
 	
 	public Pedido(Cliente c,Date d,String en,boolean s) {
-
+		this.endereçoEntrega = en;
 
 	}
 }
