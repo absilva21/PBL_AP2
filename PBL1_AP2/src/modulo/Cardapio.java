@@ -15,4 +15,9 @@ class Cardapio {
 	public void setValor(float valor) {
 		this.valor = valor;
 	}
+	
+	public Cardapio(String des,float val) {
+		this.decricao = des;
+		this.valor = val;
+	}
 }
