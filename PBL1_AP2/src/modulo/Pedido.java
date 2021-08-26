@@ -4,6 +4,7 @@ class Pedido {
 	String data;
 	String hora;
 	String endereçoEntrega;
+	ItemPedido itemPedido;
 	boolean situação;
 	public String getData() {
 		return data;
@@ -47,8 +48,24 @@ class Pedido {
 
 	Cliente cliente;
 	
+	public String gerarData(String date) {
+		String dia = String.copyValueOf(date.toCharArray(), 8, 2);
+		String ano =  String.copyValueOf(date.toCharArray(),30,4);
+	    String mes =  String.copyValueOf(date.toCharArray(),4,3);
+	    
+	    return dia+" "+mes+" "+ano;
+	    
+	  
+	}
+	
+	public String gerarHora(String date) {
+		return String.copyValueOf(date.toCharArray(), 11, 8);
+	}
+	
 	public Pedido(Cliente c,Date d,String en,boolean s) {
 		this.endereçoEntrega = en;
+		this.data = this.gerarData(d.toString());
+		this.hora = this.gerarHora(d.toString());
 
 	}
 }
