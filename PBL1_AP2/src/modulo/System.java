@@ -4,6 +4,12 @@ class System {
 	LinkList clientes;
 	LinkList Cardapio;
 	Queue Pedidos;
+	public Queue getPedidos() {
+		return Pedidos;
+	}
+	public void setPedidos(Queue pedidos) {
+		Pedidos = pedidos;
+	}
 	public LinkList getClientes() {
 		return clientes;
 	}
