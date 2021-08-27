@@ -3,6 +3,7 @@ package modulo;
 class System {
 	LinkList clientes;
 	LinkList Cardapio;
+	Queue Pedidos;
 	public LinkList getClientes() {
 		return clientes;
 	}
