@@ -57,6 +57,7 @@ final class FirstLastList {
 			this.first = current.getProximo();
 			
 		}
+		size--;
 		return aux;
 		
 	}
