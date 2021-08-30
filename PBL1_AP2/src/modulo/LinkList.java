@@ -11,7 +11,7 @@ class LinkList {
 		this.inicio = inicio;
 	}
 	
-	public boolean isEmpity() {
+	public boolean isEmpty() {
 		return inicio == null;
 	}
 	
