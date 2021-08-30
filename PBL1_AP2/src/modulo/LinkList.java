@@ -18,7 +18,7 @@ class LinkList {
 	public void inserir(Object data) {
 		Link novo = new Link(data);
 		Link aux;
-		if(this.isEmpity()) {
+		if(this.isEmpty()) {
 			this.inicio = novo;
 		}else {
 			aux = this.inicio;
@@ -46,7 +46,7 @@ class LinkList {
 		Link current = this.inicio;
 		Link anterior = null;
 		Link novo = new Link(data);
-		if(this.isEmpity()) {
+		if(this.isEmpty()) {
 			this.inicio = novo;
 		}else {
 			while(current!=null) {
@@ -62,7 +62,7 @@ class LinkList {
 	public Link removerInicio() {
 		Link current = null;
 		Link aux = null;
-		if(!this.isEmpity()){
+		if(!this.isEmpty()){
 			current = this.inicio;
 			aux = current;
 			this.inicio = current.getProximo();
@@ -73,7 +73,7 @@ class LinkList {
 	}
 	public void show() {
 		Link current = this.inicio;
-		if(this.isEmpity()) {
+		if(this.isEmpty()) {
 			System.out.println("A lista está vazia");
 		}else {
 			while(current!=null) {
