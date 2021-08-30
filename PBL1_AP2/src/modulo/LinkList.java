@@ -1,6 +1,6 @@
 package modulo;
 
-class MyLinkList {
+class MyLinkedList {
 	private Link inicio;
 	int size =0;
 	public Link getInicio() {
