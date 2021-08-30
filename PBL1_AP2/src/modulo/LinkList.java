@@ -1,6 +1,6 @@
 package modulo;
 
-class LinkList {
+class MyLinkList {
 	private Link inicio;
 	int size =0;
 	public Link getInicio() {
@@ -42,7 +42,7 @@ class LinkList {
 		return current;
 	}
 	
-	public void inserirFinal(Object data) {
+	public void add(Object data) {
 		Link current = this.inicio;
 		Link anterior = null;
 		Link novo = new Link(data);
@@ -59,7 +59,7 @@ class LinkList {
 			size++;
 		}
 	}
-	public Link removerInicio() {
+	public Link remove() {
 		Link current = null;
 		Link aux = null;
 		if(!this.isEmpty()){
@@ -71,7 +71,6 @@ class LinkList {
 		return aux;
 		
 	}
-	public void show() {
 		Link current = this.inicio;
 		if(this.isEmpty()) {
 			System.out.println("A lista está vazia");

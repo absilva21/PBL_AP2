@@ -1,27 +1,25 @@
 package modulo;
 
 class System {
-	LinkList clientes;
-	LinkList Cardapio;
+	MyLinkList clientes;
+	MyLinkList Cardapio;
 	Queue Pedidos;
+	public MyLinkList getClientes() {
+		return clientes;
+	}
+	public void setClientes(MyLinkList clientes) {
+		this.clientes = clientes;
+	}
+	public MyLinkList getCardapio() {
+		return Cardapio;
+	}
+	public void setCardapio(MyLinkList cardapio) {
+		Cardapio = cardapio;
+	}
 	public Queue getPedidos() {
 		return Pedidos;
 	}
 	public void setPedidos(Queue pedidos) {
 		Pedidos = pedidos;
 	}
-	public LinkList getClientes() {
-		return clientes;
-	}
-	public void setClientes(LinkList clientes) {
-		this.clientes = clientes;
-	}
-	public LinkList getCardapio() {
-		return Cardapio;
-	}
-	public void setCardapio(LinkList cardapio) {
-		Cardapio = cardapio;
-	}
-	
-	
 }
