@@ -48,6 +48,7 @@ final class FirstLastList {
 		
 	}
 	
+	
 	public Link deleteFirst() {
 		Link current = null;
 		Link aux = null;

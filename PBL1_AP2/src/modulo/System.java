@@ -1,6 +1,7 @@
 package modulo;
 
 class System {
+
 	MyLinkedList clientes;
 	MyLinkedList Cardapio;
 	Queue Pedidos;
@@ -21,6 +22,10 @@ class System {
 	}
 	public void setPedidos(Queue pedidos) {
 		Pedidos = pedidos;
+	}
+	
+	public System() {
+		clientes=  new MyLinkedList();
 	}
 
 }

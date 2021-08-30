@@ -2,7 +2,12 @@ package modulo;
 
 class MyLinkedList {
 	private Link inicio;
-	int size =0;
+	int size;
+	
+	public MyLinkedList() {
+		this.size = 0;
+	}
+	
 	public Link getInicio() {
 		return inicio;
 	}
@@ -12,7 +17,7 @@ class MyLinkedList {
 	}
 	
 	public boolean isEmpty() {
-		return inicio == null;
+		return this.inicio == null;
 	}
 	
 	public void inserir(Object data) {
@@ -29,9 +34,9 @@ class MyLinkedList {
 		
 	}
 	
-	public Link buscaNo(int index) {
+	public Object get(int index) {
 		Link current = this.inicio;
-		int cont = -1;
+		int cont = 0;
 		while(cont != index) {
 			if(current == null) {
 				break;
@@ -39,7 +44,7 @@ class MyLinkedList {
 			current = current.getProximo();
 			cont++;
 		}
-		return current;
+		return current.getData();
 	}
 	
 	public void add(Object data) {
@@ -56,9 +61,12 @@ class MyLinkedList {
 			}
 			anterior.setProximo(novo);
 			novo.setProximo(current);
-			size++;
+			
 		}
+		size++;
 	}
+	
+	
 	public Link remove() {
 		Link current = null;
 		Link aux = null;
@@ -71,6 +79,12 @@ class MyLinkedList {
 		return aux;
 		
 	}
+	
+	public int size() {
+		return this.size;
+	}
+	
+	public void show() {
 		Link current = this.inicio;
 		if(this.isEmpty()) {
 			System.out.println("A lista está vazia");
