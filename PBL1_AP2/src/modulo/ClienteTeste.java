@@ -48,6 +48,7 @@ class ClienteTeste {
         p1 = new Pedido(c1, new Date(1553303046),"Rua X", true);
 
         i1 = new ItemPedido(m1, 2, "sem ingrediente1");
+        
 		
 		Cliente temp = new Cliente("Fulano", "000-9090-0000","fulano@email.com");
         assertTrue(temp.equals(c1));
