@@ -34,4 +34,19 @@ class Cliente {
 		this.telefone = tel;
 		this.email = em;
 	}
+	
+	public boolean equals (Cliente c) {
+		int check=0;
+		if(c.getNome().equals(nome)) {
+			check++;
+		}
+		if(c.getEmail().equals(email)) {
+			check++;
+		}
+		if(c.getTelefone().equals(telefone)) {
+			check++;
+		}
+		
+		return check == 3;
+	}
 }
