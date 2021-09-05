@@ -50,7 +50,7 @@ class Pedido {
 	
 	public String gerarData(String date) {
 		String dia = String.copyValueOf(date.toCharArray(), 8, 2);
-		String ano =  String.copyValueOf(date.toCharArray(),30,4);
+		String ano =  String.copyValueOf(date.toCharArray(),24,4);
 	    String mes =  String.copyValueOf(date.toCharArray(),4,3);
 	    
 	    return dia+" "+mes+" "+ano;
