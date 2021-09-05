@@ -26,7 +26,7 @@ public class PedidoTeste {
 	public void testBasic(){
         assertEquals(new Date(1553303046), p1.getDataHora());
         assertEquals(c1, p1.getCliente());
-        assertEquals("Rua X", p1.getEndereco());
+        assertEquals("Rua X", p1.getEndereçoEntrega());
         assertEquals(true, p1.getSituacao());
 
         i1 = new ItemPedido(m1, 2, "sem ingrediente1");

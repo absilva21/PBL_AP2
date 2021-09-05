@@ -5,6 +5,15 @@ class Pedido {
 	String hora;
 	String endereçoEntrega;
 	MyLinkedList Itens;
+	Date datahora;
+	public Date getDataHora() {
+		return datahora;
+	}
+
+	public void setDataHora(Date datahora) {
+		this.datahora = datahora;
+	}
+
 	public MyLinkedList getItens() {
 		return Itens;
 	}
@@ -75,6 +84,7 @@ class Pedido {
 		this.Itens = new MyLinkedList();
 		this.data = this.gerarData(d.toString());
 		this.hora = this.gerarHora(d.toString());
+		this.datahora = d;
 
 	}
 }
