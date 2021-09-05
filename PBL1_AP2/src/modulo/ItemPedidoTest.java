@@ -25,6 +25,7 @@ public class ItemPedidoTest {
 
 	@Test
 	public void testBasic() {
+		
 		assertEquals(m1, i1.getOpcaoMenu());
         assertEquals(p1, i1.getPedido());
         assertEquals(2, i1.getQuantidade());

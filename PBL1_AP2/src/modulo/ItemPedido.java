@@ -37,19 +37,13 @@ class ItemPedido {
 		this.observacao = observacao;
 	}
 
-	public Cardapio getCardapio() {
-		return cardapio;
-	}
+	
 
-	public void setCardapio(Cardapio cardapio) {
-		this.cardapio = cardapio;
-	}
-
-	Cardapio cardapio;
 	
 	public ItemPedido(Cardapio c, int quan, String obs) {
-		this.cardapio = c;
+		this.OpcaoMenu = c;
 		this.quantidade = quan;
 		this.observacao = obs;
+		
 	}
 }
