@@ -4,6 +4,15 @@ class ItemPedido {
 	int quantidade;
 	String observacao;
 	Pedido pedido;
+	Cardapio OpcaoMenu;
+	public Cardapio getOpcaoMenu() {
+		return OpcaoMenu;
+	}
+
+	public void setOpcaoMenu(Cardapio opcaoMenu) {
+		OpcaoMenu = opcaoMenu;
+	}
+
 	public Pedido getPedido() {
 		return pedido;
 	}

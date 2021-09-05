@@ -24,8 +24,16 @@ public class ItemPedidoTest {
 	}
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void testBasic() {
+		assertEquals(m1, i1.getOpcaoMenu());
+        assertEquals(p1, i1.getPedido());
+        assertEquals(2, i1.getQuantidade());
+        assertEquals("sem ingrediente1", i1.getObservacao());
+
+        i1.setQuantidade(5);
+        i1.setObservacao("sem ingrediente2");
+        assertEquals(5, i1.getQuantidade());
+        assertEquals("sem ingrediente2", i1.getObservacao());
 	}
 
 }
