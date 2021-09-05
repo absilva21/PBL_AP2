@@ -4,7 +4,15 @@ class Pedido {
 	String data;
 	String hora;
 	String endereçoEntrega;
-	ItemPedido itemPedido;
+	MyLinkedList Itens;
+	public MyLinkedList getItens() {
+		return Itens;
+	}
+
+	public void setItens(MyLinkedList itens) {
+		Itens = itens;
+	}
+
 	boolean situação;
 	public String getData() {
 		return data;
@@ -64,6 +72,7 @@ class Pedido {
 	
 	public Pedido(Cliente c,Date d,String en,boolean s) {
 		this.endereçoEntrega = en;
+		this.Itens = new MyLinkedList();
 		this.data = this.gerarData(d.toString());
 		this.hora = this.gerarHora(d.toString());
 

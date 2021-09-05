@@ -19,6 +19,7 @@ class ItemPedido {
 
 	public void setPedido(Pedido pedido) {
 		this.pedido = pedido;
+		this.pedido.Itens.add(this);
 	}
 
 	public int getQuantidade() {
