@@ -6,6 +6,17 @@ class Pedido {
 	String endereçoEntrega;
 	MyLinkedList Itens;
 	Date datahora;
+	boolean situacao;
+	double valorTotal;
+	
+	public double getValorTotal() {
+		return valorTotal;
+	}
+
+	public void setValorTotal(double valorTotal) {
+		this.valorTotal = valorTotal;
+	}
+
 	public Date getDataHora() {
 		return datahora;
 	}
@@ -85,6 +96,24 @@ class Pedido {
 		this.data = this.gerarData(d.toString());
 		this.hora = this.gerarHora(d.toString());
 		this.datahora = d;
+		this.situacao = s;
+	
 
+	}
+
+	public Date getDatahora() {
+		return datahora;
+	}
+
+	public void setDatahora(Date datahora) {
+		this.datahora = datahora;
+	}
+
+	public boolean getSituacao() {
+		return situacao;
+	}
+
+	public void setSituacao(boolean situacao) {
+		this.situacao = situacao;
 	}
 }
