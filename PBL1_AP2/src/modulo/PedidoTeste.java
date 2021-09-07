@@ -47,13 +47,13 @@ public class PedidoTeste {
         assertEquals(i3, p1.getItens().get(2));
         assertEquals(38.97, p1.getValorTotal(),.0001);
 
-        p1.getItens().get(2).setQuantidade(1);
+        ((ItemPedido) p1.getItens().get(2)).setQuantidade(1);
         assertEquals(3, p1.getItens().size());
         assertEquals(i3, p1.getItens().get(2));
         assertEquals(31.99, p1.getValorTotal(),.0001);
 
-        p1.setEndereco("Rua 7");
-        assertEquals("Rua 7", p1.getEndereco());
+        p1.setEndereçoEntrega("Rua 7");
+        assertEquals("Rua 7", p1.getEndereçoEntrega());
 
         p1.setFechado();
         assertEquals(false, p1.getSituacao());

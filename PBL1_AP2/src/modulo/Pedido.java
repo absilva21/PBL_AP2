@@ -8,7 +8,16 @@ class Pedido {
 	Date datahora;
 	boolean situacao;
 	double valorTotal;
+	Cliente cliente;
 	
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
 	public double getValorTotal() {
 		return valorTotal;
 	}
@@ -65,16 +74,10 @@ class Pedido {
 	public void setSituação(boolean situação) {
 		this.situação = situação;
 	}
-
-	public Cliente getCliente() {
-		return cliente;
+	
+	public void setFechado() {
+		this.situacao= false;
 	}
-
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
-
-	Cliente cliente;
 	
 	public String gerarData(String date) {
 		String dia = String.copyValueOf(date.toCharArray(), 8, 2);
