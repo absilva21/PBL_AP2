@@ -4,7 +4,7 @@ class Pedido {
 	String data;
 	String hora;
 	String endereçoEntrega;
-	MyLinkedList Itens;
+	MyLinkedList<ItemPedido> itens;
 	Date datahora;
 	boolean situacao;
 	double valorTotal;
@@ -17,8 +17,24 @@ class Pedido {
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
+	
+	public double geraValor(){
+		double valor = 0;
+		this.itens.resetIndex();
+		ItemPedido item = (ItemPedido)this.itens.getIndex().getData();
+		valor +=item.getOpcaoMenu().getValor()*item.getQuantidade();
+		while(this.itens.hasNext()) {
+			itens.next();
+			item = (ItemPedido)itens.index.getData();
+			valor +=item.getOpcaoMenu().getValor()*item.getQuantidade();
+			
+			
+		}
+		return valor;
+	}
 
 	public double getValorTotal() {
+		this.valorTotal = this.geraValor();
 		return valorTotal;
 	}
 
@@ -34,19 +50,19 @@ class Pedido {
 		this.datahora = datahora;
 	}
 
-	public MyLinkedList getItens() {
-		return Itens;
+	public MyLinkedList<ItemPedido> getItens() {
+		return itens;
 	}
 
-	public void setItens(MyLinkedList itens) {
-		Itens = itens;
+	public void setItens(MyLinkedList<ItemPedido> i) {
+		itens = i;
 	}
 
 	boolean situação;
 	public String getData() {
 		return data;
 	}
-
+	
 	public void setData(String data) {
 		this.data = data;
 	}
@@ -95,11 +111,14 @@ class Pedido {
 	
 	public Pedido(Cliente c,Date d,String en,boolean s) {
 		this.endereçoEntrega = en;
-		this.Itens = new MyLinkedList();
+		this.itens = new MyLinkedList<ItemPedido>();
 		this.data = this.gerarData(d.toString());
 		this.hora = this.gerarHora(d.toString());
 		this.datahora = d;
 		this.situacao = s;
+		this.cliente =c;
+
+		
 	
 
 	}

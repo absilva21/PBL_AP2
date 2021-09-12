@@ -1,11 +1,45 @@
 package modulo;
 
-class MyLinkedList {
+import java.util.Iterator;
+
+class MyLinkedList<T> implements Iterator{
 	private Link inicio;
 	int size;
+	Link index;
+	
+	public int getSize() {
+		return size;
+	}
+
+	public void setSize(int size) {
+		this.size = size;
+	}
+
+	public Link getIndex() {
+		return index;
+	}
+
+	public void setIndex(Link current) {
+		this.index = current;
+	}
+
+	public void resetIndex() {
+		this.index = this.inicio;
+	}
+	
+	public boolean hasNext(){
+		return this.index.getProximo()!=null;
+	}
+	
+	public Link next() {
+		Link data = this.index;
+		this.index = index.getProximo();
+		return data;
+	}
 	
 	public MyLinkedList() {
 		this.size = 0;
+		this.index = this.inicio;
 	}
 	
 	public Link getInicio() {

@@ -39,14 +39,15 @@ public class PedidoTeste {
         assertEquals(2, p1.getItens().size());
         assertEquals(i1, p1.getItens().get(0));
         assertEquals(i2, p1.getItens().get(1));
+       
         assertEquals(28.50, p1.getValorTotal(),.0001);
-
+ 
         i3 = new ItemPedido(m3, 3, "saborX");
         i3.setPedido(p1);
         assertEquals(3, p1.getItens().size());
         assertEquals(i3, p1.getItens().get(2));
         assertEquals(38.97, p1.getValorTotal(),.0001);
-
+        
         ((ItemPedido) p1.getItens().get(2)).setQuantidade(1);
         assertEquals(3, p1.getItens().size());
         assertEquals(i3, p1.getItens().get(2));
