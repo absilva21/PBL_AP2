@@ -1,14 +1,13 @@
 package modulo;
 import java.util.Date;
 class Pedido {
-	String data;
-	String hora;
 	String endereçoEntrega;
 	MyLinkedList<ItemPedido> itens;
 	Date datahora;
 	boolean situacao;
 	double valorTotal;
 	Cliente cliente;
+	boolean situação;
 	
 	public Cliente getCliente() {
 		return cliente;
@@ -27,8 +26,6 @@ class Pedido {
 			itens.next();
 			item = (ItemPedido)itens.index.getData();
 			valor +=item.getOpcaoMenu().getValor()*item.getQuantidade();
-			
-			
 		}
 		return valor;
 	}
@@ -58,23 +55,8 @@ class Pedido {
 		itens = i;
 	}
 
-	boolean situação;
-	public String getData() {
-		return data;
-	}
 	
-	public void setData(String data) {
-		this.data = data;
-	}
-
-	public String getHora() {
-		return hora;
-	}
-
-	public void setHora(String hora) {
-		this.hora = hora;
-	}
-
+	
 	public String getEndereçoEntrega() {
 		return endereçoEntrega;
 	}
@@ -95,32 +77,13 @@ class Pedido {
 		this.situacao= false;
 	}
 	
-	public String gerarData(String date) {
-		String dia = String.copyValueOf(date.toCharArray(), 8, 2);
-		String ano =  String.copyValueOf(date.toCharArray(),24,4);
-	    String mes =  String.copyValueOf(date.toCharArray(),4,3);
-	    
-	    return dia+" "+mes+" "+ano;
-	    
-	  
-	}
-	
-	public String gerarHora(String date) {
-		return String.copyValueOf(date.toCharArray(), 11, 8);
-	}
 	
 	public Pedido(Cliente c,Date d,String en,boolean s) {
 		this.endereçoEntrega = en;
 		this.itens = new MyLinkedList<ItemPedido>();
-		this.data = this.gerarData(d.toString());
-		this.hora = this.gerarHora(d.toString());
 		this.datahora = d;
 		this.situacao = s;
 		this.cliente =c;
-
-		
-	
-
 	}
 
 	public Date getDatahora() {
