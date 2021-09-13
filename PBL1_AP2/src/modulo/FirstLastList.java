@@ -1,16 +1,29 @@
 package modulo;
 
-final class FirstLastList {
+final class FirstLastList<T> {
 	private Link first;
 	private Link last;
 	int size;
+	
+	public T get(int index) {
+		Link current = this.first;
+		int cont = 0;
+		while(cont != index) {
+			if(current == null) {
+				break;
+			}
+			current = current.getProximo();
+			cont++;
+		}
+		return(T) current.getData();
+	}
 	public Link getFirst() {
 		return first;
 	}
 	public void setFirst(Link first) {
 		this.first = first;
 	}
-	public Link getLast() {
+	public Link getLast() {	 
 		return last;
 	}
 	public int getSize() {
