@@ -1,31 +1,27 @@
 package modulo;
 
 class System {
-
-	MyLinkedList<Cliente> clientes;
+	Clientes clientes;
+	
 	MyLinkedList<Cardapio> Cardapio;
-	Queue<Pedido> pedidosAbertos;
+	Pedidos pedidosAbertos;
 	Queue<Pedido> pedidosFechados;
 	
-	
-	public Queue<Pedido> getPedidosAbertos() {
-		return pedidosAbertos;
+	public Clientes getClientes() {
+		return clientes;
 	}
-	public void setPedidosAbertos(Queue<Pedido> pedidosAbertos) {
-		this.pedidosAbertos = pedidosAbertos;
+	public void setClientes(Clientes clientes) {
+		this.clientes = clientes;
 	}
+
 	public Queue<Pedido> getPedidosFechados() {
 		return pedidosFechados;
 	}
 	public void setPedidosFechados(Queue<Pedido> pedidosFechados) {
 		this.pedidosFechados = pedidosFechados;
 	}
-	public MyLinkedList<Cliente> getClientes() {
-		return clientes;
-	}
-	public void setClientes(MyLinkedList<Cliente> clientes) {
-		this.clientes = clientes;
-	}
+	
+	
 	public MyLinkedList<Cardapio> getCardapio() {
 		return Cardapio;
 	}
@@ -33,8 +29,16 @@ class System {
 		Cardapio = cardapio;
 	}
 
+	public Pedidos getPedidosAbertos() {
+		return pedidosAbertos;
+	}
+	public void setPedidosAbertos(Pedidos pedidosAbertos) {
+		this.pedidosAbertos = pedidosAbertos;
+	}
 	public System() {
-		clientes =  new MyLinkedList<Cliente>();
+		clientes =  new Clientes();
+		this.pedidosAbertos = new Pedidos();
+	
 	}
 
 }

@@ -101,7 +101,7 @@ class MyLinkedList<T> implements Iterator{
 	}
 	
 	
-	public Link remove() {
+	public void remove() {
 		Link current = null;
 		Link aux = null;
 		if(!this.isEmpty()){
@@ -110,7 +110,28 @@ class MyLinkedList<T> implements Iterator{
 			this.inicio = current.getProximo();
 			
 		}
-		return aux;
+		
+	}
+	
+	public void remove(int inde) {
+		Link current = this.inicio;
+		Link anterior;
+		Link temp = null;
+		int cont = 0;
+		while(cont != inde) {
+			if(current == null) {
+				break;
+			}
+			anterior = current;
+			current = current.getProximo();
+			cont++;
+		}
+		
+		if(cont==inde) {
+			anterior = current.getProximo();
+			temp = current;
+		}
+		
 		
 	}
 	

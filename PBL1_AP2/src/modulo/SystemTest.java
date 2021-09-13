@@ -43,6 +43,11 @@ public class SystemTest {
     */
    @Test
    public void testAddCliente() {
+	   c1 = new Cliente("Fulano", "000-9090-0000","fulano@email.com");
+       c2 = new Cliente("Beltrano", "000-9080-0000","beltrano@email.com");
+       c3 = new Cliente("Cicrano", "000-9080-0000","cicrano@email.com");
+       sys = new System();
+       
        sys.getClientes().add(c1);
        sys.getClientes().add(c2);
        sys.getClientes().add(c3);
@@ -59,6 +64,7 @@ public class SystemTest {
     */
    @Test
    public void testAddCardapio() {
+	   sys = new System();
        sys.getCardapio().add(m1);
        sys.getCardapio().add(m2);
        sys.getCardapio().add(m3);
@@ -75,7 +81,7 @@ public class SystemTest {
     */
    @Test
    public void testAddPedido() {
-
+	   sys = new System();
        sys.getPedidosAbertos().enqueue(p1);
        sys.getPedidosAbertos().enqueue(p2);
        sys.getPedidosAbertos().enqueue(p3);
@@ -92,26 +98,34 @@ public class SystemTest {
     */
    @Test
    public void testRemoveCliente() {
+	   sys = new System();
+	   c1 = new Cliente("Fulano", "000-9090-0000","fulano@email.com");
+       c2 = new Cliente("Beltrano", "000-9080-0000","beltrano@email.com");
+       c3 = new Cliente("Cicrano", "000-9080-0000","cicrano@email.com");
        sys.getClientes().add(c1);
        sys.getClientes().add(c2);
        sys.getClientes().add(c3);
        
+       
+       
        sys.getClientes().removeByPhone("000-9999-0000");
+       
        assertEquals(sys.getClientes().size(),3);
        assertEquals(c1, sys.getClientes().get(0));
        assertEquals(c2, sys.getClientes().get(1));
        assertEquals(c3, sys.getClientes().get(2));
        
        sys.getClientes().removeByPhone("000-9080-0000");
-       assertEquals(sys.getClientes().size(),1);
+       assertEquals(1,sys.getClientes().size());
        assertEquals(c1, sys.getClientes().get(0));
 
        assertFalse(sys.getClientes().isEmpty());
    }
    
+   
    /**
     * Teste de unidade que verifica o iterador de clientes.
-    */
+    
    @Test
    public void testIterator() {
        sys.getClientes().add(c1);
@@ -132,9 +146,9 @@ public class SystemTest {
        assertFalse(it.hasNext());        
    }
 
-   /**
+   **
     * Teste que verifica verifica se é possível recuperar clientes pelo telefone ou nome
-   */
+  
    @Test
    public void testSearchClientes(){
        sys.getClientes().add(c1);
@@ -175,7 +189,7 @@ public class SystemTest {
 
    /**
     * Teste de unidade que verifica atualização do pedido e pedidos em aberto.
-    */
+    
    @Test
    public void testAtualizaPedidos() {
 
@@ -221,7 +235,7 @@ public class SystemTest {
 
    /**
     * Teste de unidade que verifica apresentação do cardápio.
-    */
+    
    @Test
    public void testListaCardapio() {
        sys.getCardapio().add(m1);
@@ -236,7 +250,7 @@ public class SystemTest {
        assertEquals(sys.getCardapio().showCardapio(),"Prato1\nPrato2\nBebida1");
 
     }
-
+*/
 
 
 }

@@ -1,9 +1,34 @@
 package modulo;
+import java.util.Iterator;
 
-final class FirstLastList<T> {
+
+final class FirstLastList<T> implements Iterator {
 	private Link first;
 	private Link last;
+	private Link index;
 	int size;
+	
+	public Link getIndex() {
+		return index;
+	}
+
+	public void setIndex(Link a) {
+		index = a;
+	}
+
+	public boolean hasNext() {
+		return this.index.getProximo()!=null;
+	}
+	
+	public void resetIndex() {
+		this.index = this.first;
+	}
+	
+	public Link next() {
+		Link data = this.index;
+		this.index = index.getProximo();
+		return data;
+	}
 	
 	public T get(int index) {
 		Link current = this.first;
@@ -16,6 +41,26 @@ final class FirstLastList<T> {
 			cont++;
 		}
 		return(T) current.getData();
+	}
+	
+	public void Remove(int index) {
+		Link current = this.first;
+		Link temp = null;
+		int cont = 0;
+		while(cont != index) {
+			if(current == null) {
+				break;
+			}
+			current = current.getProximo();
+			cont++;
+		}
+		
+		this.first.setProximo(this.first);
+		this.first= current;
+		current = this.first;
+		temp = current;
+		this.first = current.getProximo();
+		
 	}
 	public Link getFirst() {
 		return first;
@@ -57,6 +102,7 @@ final class FirstLastList<T> {
 			this.last.setProximo(c);
 			this.last = c;
 		}
+		size++;
 	
 		
 	}
@@ -75,6 +121,8 @@ final class FirstLastList<T> {
 		return aux;
 		
 	}
+	
+	
 	
 	
 }
