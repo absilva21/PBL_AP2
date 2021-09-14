@@ -1,7 +1,21 @@
 package modulo;
 import java.util.Iterator;
+/*******************************************************************************
+Autor: Alisson Bomfim da Silva
+Componente Curricular: Algoritmos I
+Concluido em: 14/10/2011
+Declaro que este código foi elaborado por mim de forma individual e não contém nenhum
+trecho de código de outro colega ou de outro autor, tais como provindos de livros e
+apostilas, e páginas ou documentos eletrônicos da Internet. Qualquer trecho de código
+de outra autoria que não a minha está destacado com uma citação para o autor e a fonte
+do código, e estou ciente que estes trechos não serão considerados para fins de avaliação.
+******************************************************************************************/
 
-
+/**
+ * @author alisson
+ *
+ * @param <T>
+ */
 final class FirstLastList<T> implements Iterator {
 	private Link first;
 	private Link last;
@@ -30,6 +44,10 @@ final class FirstLastList<T> implements Iterator {
 		return data;
 	}
 	
+	/**
+	 * @param index
+	 * @return
+	 */
 	public T get(int index) {
 		Link current = this.first;
 		int cont = 0;
@@ -43,6 +61,9 @@ final class FirstLastList<T> implements Iterator {
 		return(T) current.getData();
 	}
 	
+	/**
+	 * @param index
+	 */
 	public void Remove(int index) {
 		Link current = this.first;
 		Link temp = null;
@@ -62,6 +83,9 @@ final class FirstLastList<T> implements Iterator {
 		this.first = current.getProximo();
 		
 	}
+	/**
+	 * @return
+	 */
 	public Link getFirst() {
 		return first;
 	}
@@ -85,6 +109,9 @@ final class FirstLastList<T> implements Iterator {
 		return first == null;
 	}
 	
+	/**
+	 * @param a
+	 */
 	public void insertfirst(Object a) {
 		if(isEmpity()) {
 			Link c = new Link(a);
@@ -93,6 +120,9 @@ final class FirstLastList<T> implements Iterator {
 		}
 	}
 	
+	/**
+	 * @param a
+	 */
 	public void insertLast(Object a) {
 		
 		Link c = new Link(a);
@@ -108,6 +138,9 @@ final class FirstLastList<T> implements Iterator {
 	}
 	
 	
+	/**
+	 * @return
+	 */
 	public Link deleteFirst() {
 		Link current = null;
 		Link aux = null;

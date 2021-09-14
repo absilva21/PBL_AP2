@@ -1,15 +1,30 @@
 package modulo;
-
+/*******************************************************************************
+Autor: Alisson Bomfim da Silva
+Componente Curricular: Algoritmos I
+Concluido em: 14/10/2011
+Declaro que este código foi elaborado por mim de forma individual e não contém nenhum
+trecho de código de outro colega ou de outro autor, tais como provindos de livros e
+apostilas, e páginas ou documentos eletrônicos da Internet. Qualquer trecho de código
+de outra autoria que não a minha está destacado com uma citação para o autor e a fonte
+do código, e estou ciente que estes trechos não serão considerados para fins de avaliação.
+******************************************************************************************/
 import java.util.Iterator;
 
 class Clientes extends MyLinkedList<Cliente> {
 	
+	/**
+	 * 
+	 */
 	public Clientes() {
 		super();
 		super.resetIndex();
 	}
 	
 	//remove por telefone
+	/**
+	 * @param phone
+	 */
 	public void removeByPhone(String phone) {
 		int posi = 0;
 		super.resetIndex();
@@ -31,10 +46,16 @@ class Clientes extends MyLinkedList<Cliente> {
 		
 	}
 
+	/**
+	 * @param c
+	 */
 	public void add(Cliente c) {
 		super.add(c);
 	}
 	
+	/**
+	 * @return
+	 */
 	public Iterator iterator() {
 		return this;
 	}
@@ -50,6 +71,14 @@ class Clientes extends MyLinkedList<Cliente> {
 		return super.hasNext();
 	}
 	 //procura por name
+	/**
+	 * @param name
+	 * @return
+	 */
+	/**
+	 * @param name
+	 * @return
+	 */
 	public Iterator searchClientebyName(String name) {
 		
 		MyLinkedList<Cliente> a = new MyLinkedList<Cliente>();
@@ -75,6 +104,14 @@ class Clientes extends MyLinkedList<Cliente> {
 		return a;
 	}
 	///busca por telefone
+	/**
+	 * @param phone
+	 * @return
+	 */
+	/**
+	 * @param phone
+	 * @return
+	 */
 	public Iterator searchClientebyPhone(String phone) {
 		MyLinkedList<Cliente> a = new MyLinkedList<Cliente>();
 		super.resetIndex();
