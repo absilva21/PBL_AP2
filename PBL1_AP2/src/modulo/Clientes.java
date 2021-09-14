@@ -6,6 +6,7 @@ class Clientes extends MyLinkedList<Cliente> {
 	
 	public Clientes() {
 		super();
+		super.resetIndex();
 	}
 	public void removeByPhone(String phone) {
 		int posi = 0;
@@ -16,7 +17,6 @@ class Clientes extends MyLinkedList<Cliente> {
 		}
 		
 		while(super.getIndex()!=null) {
-			
 			c =  super.next();
 			if(c.getTelefone().equals(phone)) {
 				super.remove(posi);
@@ -34,10 +34,17 @@ class Clientes extends MyLinkedList<Cliente> {
 	}
 	
 	public Iterator iterator() {
-		super.resetIndex();
 		return this;
 	}
 	public Cliente get(int index) {
 		return (Cliente) super.get(index);
+	}
+	
+	public Cliente next() {
+		return super.next();
+	}
+	
+	public boolean hasNext() {
+		return super.hasNext();
 	}
 }

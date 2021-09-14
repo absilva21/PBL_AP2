@@ -35,7 +35,7 @@ class Cliente {
 		this.email = em;
 	}
 	
-	public boolean equals (Cliente c) {
+	/*public boolean equals (Cliente c) {
 		int check=0;
 		if(c.getNome().equals(nome)) {
 			check++;
@@ -48,5 +48,5 @@ class Cliente {
 		}
 		
 		return check == 3;
-	}
+	}*/
 }

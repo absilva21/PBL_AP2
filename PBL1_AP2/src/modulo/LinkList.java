@@ -30,12 +30,26 @@ class MyLinkedList<T> implements Iterator{
 	}
 	
 	public boolean hasNext(){
-		return this.index.getProximo()!=null;
+		return this.index!=null;
 	}
 	
 	public T next() {
-		Link data = this.index;
-		this.index = index.getProximo();
+		Link data;
+		if(this.index==this.inicio) {
+			data = this.index;
+			this.index = index.getProximo();
+			
+		}else if(this.index==this.inicio.getProximo()) {
+			data = this.index;
+			this.index = index.getProximo();
+		}else if(this.index.getProximo()==null) {
+			data = this.index;
+			this.index = null;
+		}else {
+			this.index = index.getProximo();
+			data = this.index;
+		}
+		
 		return (T) data.getData();
 	}
 	
@@ -99,6 +113,7 @@ class MyLinkedList<T> implements Iterator{
 			novo.setProximo(current);
 			
 		}
+		this.index=this.inicio;
 		size++;
 	}
 	

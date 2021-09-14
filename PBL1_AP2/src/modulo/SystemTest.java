@@ -156,7 +156,7 @@ public class SystemTest {
 
    /**
     * Teste que verifica verifica se é possível recuperar clientes pelo telefone ou nome
-  
+   */
    @Test
    public void testSearchClientes(){
        sys.getClientes().add(c1);
