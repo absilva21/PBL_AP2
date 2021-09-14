@@ -47,4 +47,52 @@ class Clientes extends MyLinkedList<Cliente> {
 	public boolean hasNext() {
 		return super.hasNext();
 	}
+	
+	public Iterator searchClientebyName(String name) {
+		
+		MyLinkedList<Cliente> a = new MyLinkedList<Cliente>();
+		super.resetIndex();
+		
+		Cliente c = (Cliente) super.next();
+		if(c.getNome().equals(name)) {
+			a.add(c);
+			
+		}
+		
+		while(super.getIndex()!=null) {
+			c =  super.next();
+			if(c.getNome().equals(name)) {
+				a.add(c);
+				
+				
+			}
+			
+			
+		}
+		
+		return a;
+	}
+	
+	public Iterator searchClientebyPhone(String phone) {
+		MyLinkedList<Cliente> a = new MyLinkedList<Cliente>();
+		super.resetIndex();
+		Cliente c = this.next();
+		if(c.getTelefone().equals(phone)) {
+			a.add(c);
+			
+		}
+		
+		while(super.getIndex()!=null) {
+			c =  super.next();
+			if(c.getTelefone().equals(phone)) {
+				a.add(c);
+				
+				
+			}
+			
+			
+		}
+		
+		return a;
+	}
 }

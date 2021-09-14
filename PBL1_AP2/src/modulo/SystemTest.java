@@ -159,6 +159,11 @@ public class SystemTest {
    */
    @Test
    public void testSearchClientes(){
+	   sys = new System();
+	   c1 = new Cliente("Fulano", "000-9090-0000","fulano@email.com");
+       c2 = new Cliente("Beltrano", "000-9080-0000","beltrano@email.com");
+       c3 = new Cliente("Cicrano", "000-9080-0000","cicrano@email.com");
+
        sys.getClientes().add(c1);
        sys.getClientes().add(c2);
        sys.getClientes().add(c3);
@@ -197,7 +202,7 @@ public class SystemTest {
 
    /**
     * Teste de unidade que verifica atualização do pedido e pedidos em aberto.
-    
+    */
    @Test
    public void testAtualizaPedidos() {
 
@@ -243,7 +248,7 @@ public class SystemTest {
 
    /**
     * Teste de unidade que verifica apresentação do cardápio.
-    
+    */
    @Test
    public void testListaCardapio() {
        sys.getCardapio().add(m1);
@@ -258,7 +263,7 @@ public class SystemTest {
        assertEquals(sys.getCardapio().showCardapio(),"Prato1\nPrato2\nBebida1");
 
     }
-*/
+
 
 
 }
