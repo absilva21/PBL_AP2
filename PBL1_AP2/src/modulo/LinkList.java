@@ -33,10 +33,10 @@ class MyLinkedList<T> implements Iterator{
 		return this.index.getProximo()!=null;
 	}
 	
-	public Link next() {
+	public T next() {
 		Link data = this.index;
 		this.index = index.getProximo();
-		return data;
+		return (T) data.getData();
 	}
 	
 	public MyLinkedList() {

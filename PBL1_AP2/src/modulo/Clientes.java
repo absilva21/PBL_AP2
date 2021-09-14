@@ -1,5 +1,7 @@
 package modulo;
 
+import java.util.Iterator;
+
 class Clientes extends MyLinkedList<Cliente> {
 	
 	public Clientes() {
@@ -14,8 +16,8 @@ class Clientes extends MyLinkedList<Cliente> {
 		}
 		
 		while(super.getIndex()!=null) {
-			Link a = super.next();
-			c = (Cliente) a.getData();
+			
+			c =  super.next();
 			if(c.getTelefone().equals(phone)) {
 				super.remove(posi);
 				posi--;
@@ -31,6 +33,10 @@ class Clientes extends MyLinkedList<Cliente> {
 		super.add(c);
 	}
 	
+	public Iterator iterator() {
+		super.resetIndex();
+		return this;
+	}
 	public Cliente get(int index) {
 		return (Cliente) super.get(index);
 	}

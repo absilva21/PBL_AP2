@@ -3,7 +3,7 @@ package modulo;
 class System {
 	Clientes clientes;
 	
-	MyLinkedList<Cardapio> Cardapio;
+	MyLinkedList<Cardapio> cardapio;
 	Pedidos pedidosAbertos;
 	Queue<Pedido> pedidosFechados;
 	
@@ -23,10 +23,10 @@ class System {
 	
 	
 	public MyLinkedList<Cardapio> getCardapio() {
-		return Cardapio;
+		return cardapio;
 	}
-	public void setCardapio(MyLinkedList<Cardapio> cardapio) {
-		Cardapio = cardapio;
+	public void setCardapio(MyLinkedList<Cardapio> cardapi) {
+		cardapio = cardapi;
 	}
 
 	public Pedidos getPedidosAbertos() {
@@ -37,6 +37,7 @@ class System {
 	}
 	public System() {
 		clientes =  new Clientes();
+		cardapio = new MyLinkedList<Cardapio>();
 		this.pedidosAbertos = new Pedidos();
 	
 	}
