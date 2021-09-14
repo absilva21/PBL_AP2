@@ -9,13 +9,20 @@ class Clientes extends MyLinkedList<Cliente> {
 		int posi = 0;
 		super.resetIndex();
 		Cliente c = (Cliente) super.getIndex().getData();
-		while(!c.getTelefone().equals(phone)&&super.getIndex()!=null) {
+		if(c.getTelefone().equals(phone)) {
+			super.remove(posi);
+		}
+		
+		while(super.getIndex()!=null) {
 			Link a = super.next();
 			c = (Cliente) a.getData();
+			if(c.getTelefone().equals(phone)) {
+				super.remove(posi);
+				posi--;
+				
+			}
+			
 			posi++;
-		}
-		if(c.getTelefone().equals(phone)) {
-			this.remove(posi);
 		}
 		
 	}

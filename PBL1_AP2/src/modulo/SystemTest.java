@@ -65,6 +65,9 @@ public class SystemTest {
    @Test
    public void testAddCardapio() {
 	   sys = new System();
+	   m1 = new Cardapio("Prato1", 10.00);
+       m2 = new Cardapio("Prato2", 8.50);
+       m3 = new Cardapio("Bebida1", 3.49);
        sys.getCardapio().add(m1);
        sys.getCardapio().add(m2);
        sys.getCardapio().add(m3);

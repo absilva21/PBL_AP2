@@ -2,6 +2,8 @@ package modulo;
 
 import java.util.Iterator;
 
+import util.Link;
+
 class MyLinkedList<T> implements Iterator{
 	private Link inicio;
 	int size;
@@ -108,30 +110,33 @@ class MyLinkedList<T> implements Iterator{
 			current = this.inicio;
 			aux = current;
 			this.inicio = current.getProximo();
+			size--;
 			
 		}
 		
 	}
 	
 	public void remove(int inde) {
-		Link current = this.inicio;
-		Link anterior;
-		Link temp = null;
+		Link currenta = this.inicio;
+		Link anterior = this.inicio;
 		int cont = 0;
 		while(cont != inde) {
-			if(current == null) {
+			if(currenta == null) {
 				break;
 			}
-			anterior = current;
-			current = current.getProximo();
+			anterior = currenta;
+			currenta = currenta.getProximo();
 			cont++;
 		}
 		
-		if(cont==inde) {
-			anterior = current.getProximo();
-			temp = current;
+		if(currenta==inicio) {
+			inicio= inicio.getProximo();
+			size--;
+		}else {
+			anterior.setProximo(currenta.getProximo());
+			size--;
 		}
-		
+
 		
 	}
 	
