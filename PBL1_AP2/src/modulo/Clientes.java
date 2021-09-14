@@ -8,6 +8,8 @@ class Clientes extends MyLinkedList<Cliente> {
 		super();
 		super.resetIndex();
 	}
+	
+	//remove por telefone
 	public void removeByPhone(String phone) {
 		int posi = 0;
 		super.resetIndex();
@@ -47,7 +49,7 @@ class Clientes extends MyLinkedList<Cliente> {
 	public boolean hasNext() {
 		return super.hasNext();
 	}
-	
+	 //procura por name
 	public Iterator searchClientebyName(String name) {
 		
 		MyLinkedList<Cliente> a = new MyLinkedList<Cliente>();
@@ -72,7 +74,7 @@ class Clientes extends MyLinkedList<Cliente> {
 		
 		return a;
 	}
-	
+	///busca por telefone
 	public Iterator searchClientebyPhone(String phone) {
 		MyLinkedList<Cliente> a = new MyLinkedList<Cliente>();
 		super.resetIndex();
